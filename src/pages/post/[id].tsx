@@ -1,21 +1,14 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { PostEntity } from "../../@types/entities";
+import Post from "../../shared/components/molecules/post";
 import { api } from "../../shared/infra/api";
-import { Container } from "./styles";
 
 type PostProps = {
   post: PostEntity;
 };
 
-const Post = ({ post }: PostProps) => {
-  return (
-    <Container>
-      <h3>{post.title}</h3>
-      <p>{post.content}</p>
-      <p>{new Date(post.createdAt).toISOString()}</p>
-      <p>{`Author ${post.author?.firstName} ${post.author?.lastName}`}</p>
-    </Container>
-  );
+const PostPage = ({ post }: PostProps) => {
+  return <Post post={post} />;
 };
 
 const getPostById = async (paramId: string | string[]) => {
@@ -48,4 +41,4 @@ export const getStaticProps: GetStaticProps = async (context) => {
   };
 };
 
-export default Post;
+export default PostPage;

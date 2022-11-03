@@ -1,4 +1,4 @@
-import FormSignin from "./components/FormSignin";
+import FormSignin from "../../shared/components/molecules/FormSignin";
 
 const Signin = () => {
   return <FormSignin />;

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FormEvent, useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
-import useAuth from "../../../../shared/hooks/useAuth";
+import useAuth from "../../../hooks/useAuth";
 import { Container } from "./styles";
 
 const FormSignup = () => {
