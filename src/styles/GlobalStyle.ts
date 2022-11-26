@@ -49,4 +49,10 @@ input {
 li {
   list-style: none;
 }
+
+
+.main-wraper {
+  max-width: 1080px;
+  margin: 0 auto;
+}
 `;

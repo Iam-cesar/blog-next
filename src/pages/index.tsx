@@ -1,7 +1,6 @@
 import { GetServerSideProps } from "next";
-import { PostEntity } from "../@types/entities";
-import Home from "../shared/components/particules/Home";
-import { api } from "../shared/infra/api";
+import Home from "../shared/components/pages/Home";
+import { api } from "../shared/infra/services/api";
 
 type HomeProps = {
   posts: PostEntity[];
@@ -16,7 +15,7 @@ const getPosts = async () => {
   return response.data;
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const posts = await getPosts();
 
   return {

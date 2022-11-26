@@ -5,7 +5,7 @@ export const Container = styled.nav`
   background-color: ${({ theme }) => theme.colors.background[600]};
   display: flex;
   justify-content: space-between;
-  padding: 0 2rem;
+  padding: 0 1rem;
 
   .menu-container p {
     align-self: flex-start;

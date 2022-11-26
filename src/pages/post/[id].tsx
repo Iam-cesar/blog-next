@@ -1,7 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import { PostEntity } from "../../@types/entities";
-import Post from "../../shared/components/molecules/post";
-import { api } from "../../shared/infra/api";
+import { api } from "../../shared/infra/services/api";
+import Post from "./components/post";
 
 type PostProps = {
   post: PostEntity;

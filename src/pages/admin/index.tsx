@@ -1,8 +1,11 @@
+import { decode } from "jsonwebtoken";
 import { GetServerSideProps } from "next";
 import nookies from "nookies";
+import Admin from "../../shared/components/pages/Admin";
+import { api } from "../../shared/infra/services/api";
 
-const Admin = () => {
-  return <></>;
+const AdminPage = () => {
+  return <Admin />;
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
@@ -17,9 +20,21 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
   }
 
+  const decoded = decode(token);
+  const { data: user } = await api.get(`/user/${decoded?.sub}`);
+
+  if (user && user.role !== "admin") {
+    return {
+      redirect: {
+        destination: "/404",
+        permanent: false,
+      },
+    };
+  }
+
   return {
     props: {},
   };
 };
 
-export default Admin;
+export default AdminPage;

@@ -6,7 +6,6 @@ export const Container = styled.div`
   height: 70vh;
   justify-content: center;
   place-items: center;
-  width: 100vw;
 
   form,
   .form-control {

@@ -3,9 +3,8 @@ import React, { createContext, useEffect, useState } from "react";
 import { decode } from "jsonwebtoken";
 import Router from "next/router";
 import { destroyCookie, parseCookies, setCookie } from "nookies";
-import { UserEntity } from "../@types/entities";
 import { errorToast } from "../shared/components/atoms/Toast";
-import { api } from "../shared/infra/api";
+import { api } from "../shared/infra/services/api";
 
 type AuthContextType = {
   isAdmin: boolean;

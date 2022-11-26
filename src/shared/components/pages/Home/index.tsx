@@ -1,5 +1,4 @@
 import Router from "next/router";
-import { PostEntity } from "../../../../@types/entities";
 import { Container } from "./styles";
 
 type HomeProps = {
