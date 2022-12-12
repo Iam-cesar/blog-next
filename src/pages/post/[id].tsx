@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
+import Post from "../../shared/components/pages/Posts/components/post";
 import { api } from "../../shared/infra/services/api";
-import Post from "./components/post";
 
 type PostProps = {
   post: PostEntity;

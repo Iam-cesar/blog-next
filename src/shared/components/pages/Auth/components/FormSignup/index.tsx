@@ -1,23 +1,47 @@
 import Link from "next/link";
 import { FormEvent, useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
-import useAuth from "../../../../shared/hooks/useAuth";
+import useAuth from "../../../../../hooks/useAuth";
 import { Container } from "./styles";
 
-const FormSignin = () => {
+const FormSignup = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { signIn } = useAuth();
+  const { signUp } = useAuth();
 
   async function submitForm(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    await signIn({ email, password });
+    await signUp({ firstName, lastName, email, password });
   }
 
   return (
     <Container>
-      <h1>Welcome back !</h1>
+      <h1>Create your account</h1>
       <form onSubmit={(e) => submitForm(e)}>
+        <div className="form-control">
+          <label htmlFor="first-name">First name</label>
+          <input
+            type="text"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            required
+            aria-describedby="place your first name here"
+          />
+        </div>
+
+        <div className="form-control">
+          <label htmlFor="last-name">Last name</label>
+          <input
+            type="text"
+            onChange={(e) => setLastName(e.target.value)}
+            required
+            value={lastName}
+            aria-describedby="place your email here"
+          />
+        </div>
+
         <div className="form-control">
           <label htmlFor="email">Email address</label>
           <input
@@ -45,15 +69,15 @@ const FormSignin = () => {
         </div>
 
         <div className="button-container">
-          <button type="submit">Login</button>
+          <button type="submit">Create an account</button>
         </div>
       </form>
 
       <span>
-        <Link href="/auth/signup">Create an account!</Link>
+        <Link href="/auth/signin">Already have a account? signin</Link>
       </span>
     </Container>
   );
 };
 
-export default FormSignin;
+export default FormSignup;
