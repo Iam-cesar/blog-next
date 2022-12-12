@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
   const isAuthenticated = !!user;
   const isAdmin = user?.role === "admin";
 
-  const oneHour = 60 * 60 * 1;
+  const oneHour = 60 * 60;
 
   useEffect(() => {
     const { "blog.token": token } = parseCookies();
@@ -62,7 +62,7 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
         path: "/",
       });
 
-      handleUserInformation(data.accessToken);
+      await handleUserInformation(data.accessToken);
 
       Router.push("/");
     } catch (error: any) {
@@ -85,7 +85,7 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
         path: "/",
       });
 
-      handleUserInformation(data.accessToken);
+      await handleUserInformation(data.accessToken);
 
       Router.push("/");
     } catch (error: any) {
@@ -104,7 +104,7 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
         sameSite: "strict",
       });
 
-      handleUserInformation(data.accessToken);
+      await handleUserInformation(data.accessToken);
     } catch (error: any) {
       errorToast(error.response.data.message);
     }
