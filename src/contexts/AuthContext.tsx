@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 
 import { decode } from "jsonwebtoken";
-import Router from "next/router";
+import { useRouter } from "next/router";
 import { destroyCookie, parseCookies, setCookie } from "nookies";
 import { errorToast } from "../shared/components/atoms/Toast";
 import { api } from "../shared/infra/services/api";
@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
   const [user, setUser] = useState<UserEntity | null>(null);
   const isAuthenticated = !!user;
   const isAdmin = user?.role === "admin";
-
+  const router = useRouter();
   const oneHour = 60 * 60;
 
   useEffect(() => {
@@ -64,9 +64,9 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
 
       await handleUserInformation(data.accessToken);
 
-      Router.push("/");
+      router.push("/");
     } catch (error: any) {
-      errorToast(error.response.data.message);
+      // console.log(error.response.data.message);
     }
   }
 
@@ -87,7 +87,7 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
 
       await handleUserInformation(data.accessToken);
 
-      Router.push("/");
+      router.push("/");
     } catch (error: any) {
       errorToast(error.response.data.message);
     }
@@ -121,7 +121,7 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
         sameSite: "strict",
       });
 
-      Router.push("/");
+      router.push("/");
     } catch (error: any) {
       errorToast(error.response.data.message);
     }
