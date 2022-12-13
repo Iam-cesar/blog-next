@@ -3,7 +3,7 @@ import nookies from "nookies";
 
 const { "blog.token": token } = nookies.get();
 
-const baseURL = "https://blog-api-git-main-cesar-abj.vercel.app";
+const baseURL = "https://blog-api-delta.vercel.app/";
 
 export const api = axios.create({ baseURL });
 
