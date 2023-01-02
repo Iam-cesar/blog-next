@@ -1,4 +1,4 @@
-import FormSignin from "../../shared/components/pages/Auth/components/FormSignin";
+import FormSignin from "shared/components/pages/Auth/components/FormSignin";
 
 const Signin = () => {
   return <FormSignin />;

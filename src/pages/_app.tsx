@@ -1,37 +1,28 @@
+import { AuthProvider } from "contexts/AuthContext";
 import type { AppProps } from "next/app";
-import { ToastContainer } from "react-toastify";
+import Loading from "shared/components/molecules/Loading";
+import Navbar from "shared/components/molecules/Navbar";
+import useLoading from "shared/hooks/useLoading";
 import { ThemeProvider } from "styled-components";
-import { AuthProvider } from "../contexts/AuthContext";
-import Navbar from "../shared/components/molecules/Navbar";
-import useLoading from "../shared/hooks/useLoading";
-import { GlobalStyle } from "../styles/GlobalStyle";
-import { dark } from "../styles/theme";
+import { GlobalStyle } from "styles/GlobalStyle";
+import { dark } from "styles/theme";
 
 export default function App({ Component, pageProps }: AppProps) {
+  const { isLoading } = useLoading();
+
   return (
     <AuthProvider>
       <ThemeProvider theme={dark}>
         <GlobalStyle />
         <Navbar />
 
-        {useLoading()}
+        {isLoading && <Loading />}
 
-        <div className="main-wraper">
-          <Component {...pageProps} />
-
-          <ToastContainer
-            position="top-center"
-            autoClose={2000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="light"
-          />
-        </div>
+        {!isLoading && (
+          <div className="main-wraper">
+            <Component {...pageProps} />
+          </div>
+        )}
       </ThemeProvider>
     </AuthProvider>
   );

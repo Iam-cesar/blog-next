@@ -2,6 +2,12 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 
+* {
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+}
+
 html,
 body {
   background-color: ${({ theme }) => theme.colors.background[500]};
@@ -17,13 +23,6 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-  border: none;
-  outline: none;
-
 }
 
 button {
@@ -49,7 +48,6 @@ input {
 li {
   list-style: none;
 }
-
 
 .main-wraper {
   max-width: 1080px;

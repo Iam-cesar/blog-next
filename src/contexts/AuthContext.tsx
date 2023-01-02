@@ -3,8 +3,7 @@ import React, { createContext, useEffect, useState } from "react";
 import { decode } from "jsonwebtoken";
 import { useRouter } from "next/router";
 import { destroyCookie, parseCookies, setCookie } from "nookies";
-import { errorToast } from "../shared/components/atoms/Toast";
-import { api } from "../shared/infra/services/api";
+import { api } from "shared/infra/services/api";
 
 type AuthContextType = {
   isAdmin: boolean;
@@ -66,7 +65,10 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
 
       router.push("/");
     } catch (error: any) {
-      // console.log(error.response.data.message);
+      console.log(
+        "🚀 ~ file: AuthContext.tsx:70 ~ signIn ~ error.response.data.message",
+        error.response.data.message
+      );
     }
   }
 
@@ -89,7 +91,10 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
 
       router.push("/");
     } catch (error: any) {
-      errorToast(error.response.data.message);
+      console.log(
+        "🚀 ~ file: AuthContext.tsx:94 ~ signUp ~ error.response.data.message",
+        error.response.data.message
+      );
     }
   }
 
@@ -106,7 +111,10 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
 
       await handleUserInformation(data.accessToken);
     } catch (error: any) {
-      errorToast(error.response.data.message);
+      console.log(
+        "🚀 ~ file: AuthContext.tsx:112 ~ refreshToken ~ error.response.data.message",
+        error.response.data.message
+      );
     }
   }
 
@@ -123,7 +131,10 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
 
       router.push("/");
     } catch (error: any) {
-      errorToast(error.response.data.message);
+      console.log(
+        "🚀 ~ file: AuthContext.tsx:130 ~ logout ~ error.response.data.message",
+        error.response.data.message
+      );
     }
   }
 
@@ -136,7 +147,10 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
 
       setUser(response.data);
     } catch (error: any) {
-      errorToast(error.response.data.message);
+      console.log(
+        "🚀 ~ file: AuthContext.tsx:144 ~ handleUserInformation ~ error.response.data.message",
+        error.response.data.message
+      );
     }
   }
 

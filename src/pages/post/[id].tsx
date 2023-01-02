@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import Post from "../../shared/components/pages/Posts/components/post";
-import { api } from "../../shared/infra/services/api";
+import Post from "shared/components/pages/Posts/components/post";
+import { api } from "shared/infra/services/api";
 
 type PostProps = {
   post: PostEntity;
@@ -11,14 +11,7 @@ const PostPage = ({ post }: PostProps) => {
 };
 
 const getPostById = async (paramId: string | string[]) => {
-  if (Array.isArray(paramId)) {
-    const [id] = paramId;
-    const response = await api.get(`post/${id}`);
-    return response.data;
-  }
-
   const response = await api.get(`post/${paramId}`);
-
   return response.data;
 };
 
@@ -37,6 +30,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       post,
     },
+    revalidate: 60 * 60, // one hour
   };
 };
 

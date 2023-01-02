@@ -1,72 +1,59 @@
 import Link from "next/link";
-import { FormEvent, useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
-import useAuth from "../../../../../hooks/useAuth";
+import { FormInputControl } from "./FormInputControl";
+import useFormSubmit from "./hooks/useFormSubmit";
 import { Container } from "./styles";
 
 const FormSignup = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const { signUp } = useAuth();
-
-  async function submitForm(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    await signUp({ firstName, lastName, email, password });
-  }
+  const {
+    submitForm,
+    firstName,
+    setFirstName,
+    lastName,
+    setLastName,
+    email,
+    setEmail,
+    password,
+    setPassword,
+  } = useFormSubmit();
 
   return (
     <Container>
       <h1>Create your account</h1>
       <form onSubmit={(e) => submitForm(e)}>
-        <div className="form-control">
-          <label htmlFor="first-name">First name</label>
-          <input
-            type="text"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-            required
-            aria-describedby="place your first name here"
-          />
-        </div>
+        <FormInputControl
+          type="text"
+          label="First name"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+          ariaDescribedBy="place your first name here"
+        />
 
-        <div className="form-control">
-          <label htmlFor="last-name">Last name</label>
-          <input
-            type="text"
-            onChange={(e) => setLastName(e.target.value)}
-            required
-            value={lastName}
-            aria-describedby="place your email here"
-          />
-        </div>
+        <FormInputControl
+          type="text"
+          label="Last name"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+          ariaDescribedBy="place your last name here"
+        />
 
-        <div className="form-control">
-          <label htmlFor="email">Email address</label>
-          <input
-            type="email"
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            value={email}
-            aria-describedby="place your email here"
-          />
-          <span>We&apos;ll never share your email.</span>
-        </div>
+        <FormInputControl
+          type="email"
+          label="Email address"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          ariaDescribedBy="place your email here"
+          description="We'll never share your email."
+        />
 
-        <div className="form-control">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            value={password}
-            aria-describedby="place your password here"
-          />
-          <span>
-            The password must contain numbers, uppercase, lowercase and symbols
-          </span>
-        </div>
+        <FormInputControl
+          type="password"
+          label="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          ariaDescribedBy="place your password here"
+          description="The password must contain numbers, uppercase, lowercase and symbols"
+        />
 
         <div className="button-container">
           <button type="submit">Create an account</button>
