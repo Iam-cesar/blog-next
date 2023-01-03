@@ -1,5 +1,16 @@
 export {};
 
+interface IAuthor {
+  id: string;
+  firstName: string;
+  lastName: string;
+}
+
+interface ICategory {
+  id?: string;
+  name?: string;
+}
+
 declare global {
   export type UserEntity = {
     id?: string;
@@ -49,13 +60,9 @@ declare global {
     title?: string;
     content?: string;
     published?: boolean;
-    category?: { id?: string; name?: string }[];
+    category?: ICategory[];
     authorId?: string;
-    author?: {
-      id: string;
-      firstName: string;
-      lastName: string;
-    };
+    author?: IAuthor;
     like?: LikeEntity[];
     deleted?: boolean;
     deletedAt?: Date;

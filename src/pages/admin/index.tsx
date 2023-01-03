@@ -1,7 +1,7 @@
 import { decode } from "jsonwebtoken";
 import { GetServerSideProps } from "next";
 import nookies from "nookies";
-import Admin from "shared/components/pages/Admin";
+import { Admin } from "shared/components/templates/Admin";
 import { api } from "shared/infra/services/api";
 
 const AdminPage = () => {

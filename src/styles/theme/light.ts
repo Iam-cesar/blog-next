@@ -2,9 +2,18 @@ import { colorPalete } from "../colors/colorPalete";
 
 export const light = {
   colors: {
-    primary: colorPalete.red,
-    secundary: colorPalete.indigo,
-    text: colorPalete.black,
-    background: colorPalete.white,
+    primary: colorPalete.goldenrod[400],
+    secundary: colorPalete.russet[100],
+    text: colorPalete.black[600],
+    background: colorPalete.white[300],
+    navbar: colorPalete.russet[100],
+    buttonBackground: colorPalete.russet[700],
+    buttonText: colorPalete.white[100],
+    inputBackgroundColor: colorPalete.white[100],
+    modalBackgroundColor: colorPalete.white[100],
+    borderColor: colorPalete.black[100],
+  },
+  effects: {
+    boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
   },
 };

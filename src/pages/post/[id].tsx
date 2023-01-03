@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import Post from "shared/components/pages/Posts/components/post";
+import { Post } from "shared/components/templates/Posts/components/post";
 import { api } from "shared/infra/services/api";
 
 type PostProps = {

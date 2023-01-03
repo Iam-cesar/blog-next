@@ -1,5 +1,5 @@
 import { GetServerSideProps } from "next";
-import Home from "../shared/components/pages/Home";
+import { Home } from "../shared/components/templates/Home";
 import { api } from "../shared/infra/services/api";
 
 type HomeProps = {

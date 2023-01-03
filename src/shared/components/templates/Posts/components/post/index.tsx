@@ -29,4 +29,4 @@ const Post = ({ post }: PostProps) => {
   );
 };
 
-export default Post;
+export { Post };

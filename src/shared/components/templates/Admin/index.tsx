@@ -1,16 +1,17 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Link from "next/link";
+import { Button } from "shared/components/atoms/Buttons";
 import { Container } from "./styles";
 
 const Admin = () => {
   return (
     <Container>
-      <button>
+      <Button>
         <Link href="/admin/create-post">Create</Link>
-      </button>
-      <button>
+      </Button>
+      <Button>
         <Link href="/admin/update-post">Update</Link>
-      </button>
+      </Button>
     </Container>
   );
 };
@@ -28,4 +29,4 @@ export const getStaticProps: GetStaticProps = (context) => {
   };
 };
 
-export default Admin;
+export { Admin };

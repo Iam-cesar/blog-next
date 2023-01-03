@@ -1,12 +1,12 @@
 import Link from "next/link";
-import "react-toastify/dist/ReactToastify.css";
-import { FormInputControl } from "./FormInputControl";
-import useFormSubmit from "./hooks/useFormSubmit";
+import { Button } from "shared/components/atoms/Buttons";
+import useFormSubmit from "shared/components/templates/Auth/hooks/useFormSubmit";
+import { FormInputControl } from "../FormInputControl";
 import { Container } from "./styles";
 
 const FormSignup = () => {
   const {
-    submitForm,
+    submitFormSignUp,
     firstName,
     setFirstName,
     lastName,
@@ -20,7 +20,7 @@ const FormSignup = () => {
   return (
     <Container>
       <h1>Create your account</h1>
-      <form onSubmit={(e) => submitForm(e)}>
+      <form onSubmit={(e) => submitFormSignUp(e)}>
         <FormInputControl
           type="text"
           label="First name"
@@ -56,7 +56,7 @@ const FormSignup = () => {
         />
 
         <div className="button-container">
-          <button type="submit">Create an account</button>
+          <Button type="submit">Create an account</Button>
         </div>
       </form>
 
@@ -67,4 +67,4 @@ const FormSignup = () => {
   );
 };
 
-export default FormSignup;
+export { FormSignup };

@@ -4,7 +4,7 @@ import { Container } from "./styles";
 type HomeProps = {
   posts: PostEntity[];
 };
-export default function Home({ posts }: HomeProps) {
+const Home = ({ posts }: HomeProps) => {
   return (
     <Container>
       {posts.map((post) => (
@@ -15,4 +15,6 @@ export default function Home({ posts }: HomeProps) {
       ))}
     </Container>
   );
-}
+};
+
+export { Home };

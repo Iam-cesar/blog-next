@@ -4,4 +4,4 @@ const Loading = () => {
   return <Container>Loading...</Container>;
 };
 
-export default Loading;
+export { Loading };

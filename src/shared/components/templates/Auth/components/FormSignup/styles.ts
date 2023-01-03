@@ -22,8 +22,6 @@ export const Container = styled.div`
   }
 
   form button {
-    background-color: ${({ theme }) => theme.colors.primary[800]};
-    color: ${({ theme }) => theme.colors.background[100]};
     font-size: 1.1rem;
     height: 2.5rem;
     margin: 1rem 0;
