@@ -22,16 +22,25 @@ const Navbar = () => {
 
       <ul>
         {isAuthenticated && (
-          <div>
+          <div onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <UserInitials
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
               firstName={user?.firstName}
               lastName={user?.lastName}
             />
           </div>
         )}
 
-        {permitionsToOpenMenu && <MenuProfile />}
+        {permitionsToOpenMenu && (
+          <div
+            className="navbar-menu-profile"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <MenuProfile
+              isMenuOpen={isMenuOpen}
+              setIsMenuOpen={setIsMenuOpen}
+            />
+          </div>
+        )}
 
         {!isAuthenticated && (
           <div className="navbar-offline-options">

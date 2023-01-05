@@ -3,7 +3,7 @@ import useAuth from "shared/hooks/useAuth";
 
 import { Container } from "./styles";
 
-const MenuProfile = () => {
+const MenuProfile = ({ setIsMenuOpen, isMenuOpen }: any) => {
   const { logout, isAuthenticated, isAdmin, user } = useAuth();
   const adminPermition = isAdmin && isAuthenticated;
 

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.ul`
+export const Container = styled.div`
   --navbar-size: 4.375rem;
 
   background-color: ${({ theme }) => theme.colors.modalBackgroundColor};
@@ -12,8 +12,8 @@ export const Container = styled.ul`
   padding: 0.5rem;
   right: 0.5rem;
   top: calc(var(--navbar-size) + 0.5rem);
-  z-index: 9999;
   width: 16.5rem;
+  z-index: 9999;
 
   section {
     border-bottom: 1px solid ${({ theme }) => theme.colors.borderColor};
@@ -21,8 +21,8 @@ export const Container = styled.ul`
   }
 
   li {
-    display: flex;
     align-items: center;
+    display: flex;
     height: calc(var(--navbar-size) / 2);
     padding-left: 0.5rem;
     opacity: 0.7;
