@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.div<any>`
   span {
     background-color: ${({ theme }) => theme.colors.buttonBackground};
     border-radius: 50%;
