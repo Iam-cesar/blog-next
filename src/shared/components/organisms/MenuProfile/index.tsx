@@ -3,7 +3,7 @@ import useAuth from "shared/hooks/useAuth";
 
 import { Container } from "./styles";
 
-const MenuProfile = ({ setIsMenuOpen, isMenuOpen }: any) => {
+const MenuProfile = () => {
   const { logout, isAuthenticated, isAdmin, user } = useAuth();
   const adminPermition = isAdmin && isAuthenticated;
 
@@ -14,7 +14,7 @@ const MenuProfile = ({ setIsMenuOpen, isMenuOpen }: any) => {
           <i>{`${user?.firstName} ${user?.lastName}`}</i>
         </li>
         <li>Profile</li>
-        <li>My posts</li>
+        <li onClick={() => Router.push("/author")}>My content</li>
       </section>
 
       {adminPermition && <li onClick={() => Router.push("/admin")}>Admin</li>}

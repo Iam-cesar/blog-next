@@ -35,7 +35,7 @@ button {
 
   :hover {
     cursor: pointer;
-    scale: 1.02;
+    scale: 1.01;
   }
 }
 
@@ -56,6 +56,6 @@ li {
   padding: 0 1rem;
   max-width: 1080px;
   margin: 0 auto;
-
+  height: 100%;
 }
 `;

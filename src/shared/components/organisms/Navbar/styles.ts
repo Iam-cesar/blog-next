@@ -43,7 +43,8 @@ export const Container = styled.nav`
     }
   }
 
-  .navbar-offline-options {
+  .navbar-offline-options,
+  .navbar-online-options {
     align-items: center;
     display: flex;
     gap: 1rem;

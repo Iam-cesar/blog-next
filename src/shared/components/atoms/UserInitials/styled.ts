@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { UserInitialsProps } from ".";
 
-export const Container = styled.div<any>`
+export const Container = styled.div<UserInitialsProps>`
   span {
     background-color: ${({ theme }) => theme.colors.buttonBackground};
     border-radius: 50%;

@@ -31,7 +31,9 @@ const FormSignin = () => {
         />
 
         <div className="button-container">
-          <Button type="submit">Login</Button>
+          <Button btnType="primary" type="submit">
+            Login
+          </Button>
         </div>
       </form>
 

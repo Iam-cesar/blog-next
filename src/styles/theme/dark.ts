@@ -12,6 +12,7 @@ export const dark = {
     inputBackgroundColor: colorPalete.white[100],
     modalBackgroundColor: colorPalete.white[100],
     borderColor: colorPalete.black[100],
+    disabled: colorPalete.black[300],
   },
   effects: {
     boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",

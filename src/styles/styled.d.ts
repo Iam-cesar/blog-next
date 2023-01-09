@@ -13,6 +13,7 @@ declare module "styled-components" {
       inputBackgroundColor: string;
       modalBackgroundColor: string;
       borderColor: string;
+      disabled: string;
     };
 
     effects: {

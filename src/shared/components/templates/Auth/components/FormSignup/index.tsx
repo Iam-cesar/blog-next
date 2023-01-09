@@ -56,7 +56,9 @@ const FormSignup = () => {
         />
 
         <div className="button-container">
-          <Button type="submit">Create an account</Button>
+          <Button btnType="primary" type="submit">
+            Create an account
+          </Button>
         </div>
       </form>
 

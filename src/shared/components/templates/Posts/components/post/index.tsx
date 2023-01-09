@@ -1,4 +1,5 @@
 import capitalize from "shared/utils/capitalize";
+import { RenderStringHtml } from "shared/utils/RenderHtmlToString";
 import { Container } from "./styles";
 
 type PostProps = {
@@ -22,7 +23,7 @@ const Post = ({ post }: PostProps) => {
   return (
     <Container>
       <h3>{post.title}</h3>
-      <p>{post.content}</p>
+      <RenderStringHtml value={post.content} />
       <p>criado em: {formatedDate}</p>
       <p>{`escrito por: ${fullName}`}</p>
     </Container>

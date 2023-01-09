@@ -1,13 +1,16 @@
-import { DetailedHTMLProps, HTMLAttributes } from "react";
+import { HtmlHTMLAttributes } from "react";
 import { Container } from "./styled";
 
-interface UserInitialsProps
-  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+interface IUserInitials {
   firstName: string | undefined;
   lastName: string | undefined;
 }
 
-const userInitial = ({ firstName, lastName }: UserInitialsProps) => {
+export interface UserInitialsProps
+  extends HtmlHTMLAttributes<HTMLElement>,
+    Partial<IUserInitials> {}
+
+const userInitial = ({ firstName, lastName }: IUserInitials) => {
   if (!firstName || !lastName) return "";
 
   const firstNameInitial = firstName.at(0);
