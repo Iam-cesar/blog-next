@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const MenuProfileContainer = styled.div`
   --navbar-size: 4.375rem;
 
   background-color: ${({ theme }) => theme.colors.modalBackgroundColor};

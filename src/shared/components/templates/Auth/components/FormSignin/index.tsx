@@ -2,14 +2,14 @@ import Link from "next/link";
 import { Button } from "shared/components/atoms/Buttons";
 import useFormSubmit from "shared/components/templates/Auth/hooks/useFormSubmit";
 import { FormInputControl } from "../FormInputControl";
-import { Container } from "./styles";
+import { FormSigninContainer } from "./styles";
 
 const FormSignin = () => {
   const { submitFormSignIn, email, setEmail, password, setPassword } =
     useFormSubmit();
 
   return (
-    <Container>
+    <FormSigninContainer>
       <h1>Welcome back !</h1>
       <form onSubmit={(e) => submitFormSignIn(e)}>
         <FormInputControl
@@ -40,7 +40,7 @@ const FormSignin = () => {
       <span>
         <Link href="/auth/signup">Create an account!</Link>
       </span>
-    </Container>
+    </FormSigninContainer>
   );
 };
 

@@ -1,4 +1,4 @@
-import { Container } from "./styles";
+import { AuthorContainer } from "./styles";
 
 export interface AuthorProps {
   authorContent: PostEntity[];
@@ -6,11 +6,11 @@ export interface AuthorProps {
 
 const Author = ({ authorContent }: AuthorProps) => {
   return (
-    <Container>
+    <AuthorContainer>
       {authorContent?.map((content, index) => (
         <h3 key={index}>{content.title}</h3>
       ))}
-    </Container>
+    </AuthorContainer>
   );
 };
 

@@ -6,7 +6,7 @@ import { UserInitials } from "shared/components/atoms/UserInitials";
 import useAuth from "shared/hooks/useAuth";
 import { MenuProfile } from "../MenuProfile";
 
-import { Container } from "./styles";
+import { TopBarContainer } from "./styles";
 
 const TopBar = () => {
   const router = useRouter();
@@ -15,7 +15,7 @@ const TopBar = () => {
   const permitionsToOpenMenu = isMenuOpen && isAuthenticated;
 
   return (
-    <Container>
+    <TopBarContainer>
       <div className="menu-container">
         <h1 onClick={() => router.push("/")}>Blogium</h1>
       </div>
@@ -55,9 +55,8 @@ const TopBar = () => {
           </div>
         )}
       </ul>
-    </Container>
+    </TopBarContainer>
   );
 };
 
 export { TopBar };
-

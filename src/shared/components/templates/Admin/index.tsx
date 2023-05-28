@@ -1,17 +1,17 @@
 import Link from "next/link";
 import { Button } from "shared/components/atoms/Buttons";
-import { Container } from "./styles";
+import { AdminContainer } from "./styles";
 
 const Admin = () => {
   return (
-    <Container>
+    <AdminContainer>
       <Button btnType="primary">
         <Link href="/admin/create-post">Create</Link>
       </Button>
       <Button btnType="primary">
         <Link href="/admin/update-post">Update</Link>
       </Button>
-    </Container>
+    </AdminContainer>
   );
 };
 

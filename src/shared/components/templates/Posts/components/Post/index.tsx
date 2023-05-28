@@ -1,6 +1,6 @@
-import capitalize from "shared/utils/capitalize";
 import { RenderStringHtml } from "shared/utils/RenderHtmlToString";
-import { Container } from "./styles";
+import capitalize from "shared/utils/capitalize";
+import { PostContainer } from "./styles";
 
 type PostProps = {
   post: PostEntity;
@@ -21,12 +21,12 @@ const Post = ({ post }: PostProps) => {
   }).format(createdAt);
 
   return (
-    <Container>
+    <PostContainer>
       <h3>{post.title}</h3>
       <RenderStringHtml value={post.content} />
       <p>criado em: {formatedDate}</p>
       <p>{`escrito por: ${fullName}`}</p>
-    </Container>
+    </PostContainer>
   );
 };
 

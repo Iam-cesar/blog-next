@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.nav`
+export const TopBarContainer = styled.nav`
   align-items: center;
   background-color: ${({ theme }) => theme.colors.topbar};
   display: flex;

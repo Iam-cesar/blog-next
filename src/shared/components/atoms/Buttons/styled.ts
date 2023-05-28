@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { IButton } from ".";
 
-export const Container = styled.button<IButton>`
+export const ButtonContainer = styled.button<IButton>`
   background-color: ${({ btnType, theme }) => {
     const types = {
       primary: theme.colors.buttonBackground,

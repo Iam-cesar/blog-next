@@ -1,7 +1,7 @@
-import { Container } from "./styles";
+import { LoadingContainer } from "./styles";
 
 const Loading = () => {
-  return <Container>Loading...</Container>;
+  return <LoadingContainer>Loading...</LoadingContainer>;
 };
 
 export { Loading };

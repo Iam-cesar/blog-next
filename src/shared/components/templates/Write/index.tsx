@@ -4,7 +4,7 @@ import { FormEvent, useState } from "react";
 import "react-quill/dist/quill.snow.css";
 import { Button } from "shared/components/atoms/Buttons";
 import { api } from "shared/infra/services/api";
-import { Container, Content, Title } from "./styles";
+import { Content, Title, WriteContainer } from "./styles";
 
 const NoSSREditor = dynamic(() => import("react-quill"), {
   ssr: false,
@@ -37,7 +37,7 @@ const Write = () => {
   }
 
   return (
-    <Container onSubmit={(e) => handleCreatePost(e, title, content)}>
+    <WriteContainer onSubmit={(e) => handleCreatePost(e, title, content)}>
       <Title>
         <input
           value={title}
@@ -54,7 +54,7 @@ const Write = () => {
       <Button disabled={!isAllowedToPost} btnType="success" type="submit">
         Publish
       </Button>
-    </Container>
+    </WriteContainer>
   );
 };
 

@@ -1,12 +1,12 @@
 import { ButtonHTMLAttributes } from "react";
-import { Container } from "./styled";
+import { ButtonContainer } from "./styled";
 
 export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   btnType: "primary" | "secundary" | "success";
 }
 
 const Button = ({ children, ...restProps }: IButton) => {
-  return <Container {...restProps}>{children}</Container>;
+  return <ButtonContainer {...restProps}>{children}</ButtonContainer>;
 };
 
 export { Button };
