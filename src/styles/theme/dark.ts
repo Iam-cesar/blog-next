@@ -6,7 +6,7 @@ export const dark = {
     secundary: colorPalete.russet[100],
     text: colorPalete.white[100],
     background: colorPalete.black[100],
-    navbar: colorPalete.russet[100],
+    topbar: colorPalete.russet[100],
     buttonBackground: colorPalete.russet[100],
     buttonText: colorPalete.black[100],
     inputBackgroundColor: colorPalete.white[100],

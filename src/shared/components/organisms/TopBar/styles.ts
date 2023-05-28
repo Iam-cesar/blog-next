@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.nav`
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.navbar};
+  background-color: ${({ theme }) => theme.colors.topbar};
   display: flex;
   height: 4.375rem;
   justify-content: space-between;
@@ -43,8 +43,8 @@ export const Container = styled.nav`
     }
   }
 
-  .navbar-offline-options,
-  .navbar-online-options {
+  .topbar-offline-options,
+  .topbar-online-options {
     align-items: center;
     display: flex;
     gap: 1rem;
@@ -54,7 +54,7 @@ export const Container = styled.nav`
     }
   }
 
-  .navbar-menu-profile {
+  .topbar-menu-profile {
     position: absolute;
     height: 100%;
     width: 100%;

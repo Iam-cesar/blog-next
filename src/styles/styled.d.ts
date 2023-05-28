@@ -7,7 +7,7 @@ declare module "styled-components" {
       secundary: string;
       text: string;
       background: string;
-      navbar: string;
+      topbar: string;
       buttonBackground: string;
       buttonText: string;
       inputBackgroundColor: string;

@@ -1,7 +1,7 @@
 import { AuthProvider } from "contexts/AuthContext";
 import type { AppProps } from "next/app";
 import { Loading } from "shared/components/molecules/Loading";
-import { Navbar } from "shared/components/organisms/Navbar";
+import { TopBar } from "shared/components/organisms/TopBar";
 import useLoading from "shared/hooks/useLoading";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "styles/GlobalStyle";
@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <AuthProvider>
       <ThemeProvider theme={light}>
         <GlobalStyle />
-        <Navbar />
+        <TopBar />
 
         {isLoading && <Loading />}
 
