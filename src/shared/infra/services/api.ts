@@ -9,4 +9,5 @@ export const api = axios.create({ baseURL });
 
 if (token) {
   api.defaults.headers["Authorization"] = `Bearer ${token}`;
+  api.defaults.headers["Access-Control-Allow-Origin"] = `*`;
 }
