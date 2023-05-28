@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
 import { FormEvent, useState } from "react";
 import "react-quill/dist/quill.snow.css";
 import { Button } from "shared/components/atoms/Buttons";
@@ -12,6 +13,7 @@ const NoSSREditor = dynamic(() => import("react-quill"), {
 const Write = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const router = useRouter();
 
   const emptyQuillDefault = "<p><br></p>";
   const isAllowedToPost = !!title && !!content && content !== emptyQuillDefault;
@@ -24,10 +26,11 @@ const Write = () => {
     event.preventDefault();
 
     try {
-      await api.post("post", { title, content });
+      const response = await api.post("post", { title, content });
 
-      setTitle("");
-      setContent("");
+      if (response.data.id) {
+        router.push(`post/${response.data.id}`);
+      }
     } catch (error) {
       console.log("🚀 ~ file: index.tsx:26 ~ Write ~ error", error);
     }

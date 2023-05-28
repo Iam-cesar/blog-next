@@ -6,11 +6,13 @@ const useLoading = () => {
   const router = useRouter();
 
   useEffect(() => {
-    const handleStart = (url: string) =>
+    const handleStart = (url: string) => {
       url !== router.asPath && setIsLoading(true);
+    };
 
-    const handleComplete = (url: string) =>
+    const handleComplete = (url: string) => {
       url === router.asPath && setIsLoading(false);
+    };
 
     router.events.on("routeChangeStart", handleStart);
     router.events.on("routeChangeComplete", handleComplete);
@@ -21,7 +23,7 @@ const useLoading = () => {
       router.events.off("routeChangeComplete", () => null);
       router.events.off("routeChangeError", () => null);
     };
-  }, [router]);
+  }, [router.asPath, router.events, isLoading]);
 
   return {
     isLoading,

@@ -16,9 +16,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <GlobalStyle />
         <TopBar />
 
-        {isLoading && <Loading />}
-
-        {!isLoading && (
+        {isLoading ? (
+          <Loading />
+        ) : (
           <div className="main-wraper">
             <Component {...pageProps} />
           </div>
