@@ -1,8 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
 import { Write } from "shared/components/templates/Write";
-import useAuth from "shared/hooks/useAuth";
 import { api } from "shared/infra/services/api";
 
 interface IEditPostProps {
@@ -10,15 +7,6 @@ interface IEditPostProps {
 }
 
 const EditPost = ({ post }: IEditPostProps) => {
-  const { isAuthenticated } = useAuth();
-  const router = useRouter();
-
-  useEffect(() => {
-    if (!isAuthenticated) {
-      router.push("/auth/signup");
-    }
-  }, [isAuthenticated, router]);
-
   return <Write entity={post} />;
 };
 

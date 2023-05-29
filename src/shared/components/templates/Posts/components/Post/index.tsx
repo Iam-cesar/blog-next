@@ -22,7 +22,7 @@ const Post = ({ post }: PostProps) => {
 
   return (
     <PostContainer>
-      <h3>{post.title}</h3>
+      <h1>{post.title}</h1>
       <RenderStringHtml value={post.content} />
       <p>criado em: {formatedDate}</p>
       <p>{`escrito por: ${fullName}`}</p>

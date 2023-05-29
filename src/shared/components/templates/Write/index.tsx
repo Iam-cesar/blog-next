@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { FormEvent, useEffect, useState } from "react";
 import "react-quill/dist/quill.snow.css";
 import { Button } from "shared/components/atoms/Buttons";
+import useAuth from "shared/hooks/useAuth";
 import { api } from "shared/infra/services/api";
 import { Content, Title, WriteContainer } from "./styles";
 
@@ -18,9 +19,16 @@ const Write = ({ entity }: IWriteProps) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const router = useRouter();
+  const { isAuthenticated } = useAuth();
 
   const emptyQuillDefault = "<p><br></p>";
   const isAllowedToPost = !!title && !!content && content !== emptyQuillDefault;
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      router.push("/auth/signup");
+    }
+  }, [isAuthenticated, router]);
 
   useEffect(() => {
     if (entity) {

@@ -25,7 +25,9 @@ const Author = ({ authorContent }: AuthorProps) => {
     <AuthorContainer>
       {authorContent?.map((content, index) => (
         <div key={index}>
-          <h3>{content.title}</h3>
+          <h3 onClick={() => router.push(`/post/${content.id}`)}>
+            {content.title}
+          </h3>
 
           <div className="btn-container">
             <button

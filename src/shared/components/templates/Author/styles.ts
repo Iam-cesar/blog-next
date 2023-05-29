@@ -8,6 +8,12 @@ export const AuthorContainer = styled.div`
     justify-content: space-between;
     width: 100%;
 
+    h1 {
+      :hover {
+        cursor: pointer;
+      }
+    }
+
     .btn-container {
       display: flex;
       gap: 1rem;
