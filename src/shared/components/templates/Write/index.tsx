@@ -44,7 +44,7 @@ const Write = ({ entity }: IWriteProps) => {
       }
 
       if (entity) {
-        response = await api.post("patch", { title, content });
+        response = await api.patch("post", { title, content });
       }
 
       if (response?.data.id) {
