@@ -26,6 +26,11 @@ a {
   text-decoration: none;
 }
 
+p{
+  margin: 0;
+  line-height: 150%;
+}
+
 button {
   border-radius: 4px;
   font-size: 1.1rem;
