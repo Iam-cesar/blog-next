@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import "react-quill/dist/quill.snow.css";
 import { Button } from "shared/components/atoms/Buttons";
 import { api } from "shared/infra/services/api";
@@ -10,13 +10,24 @@ const NoSSREditor = dynamic(() => import("react-quill"), {
   ssr: false,
 });
 
-const Write = () => {
+interface IWriteProps {
+  entity?: PostEntity;
+}
+
+const Write = ({ entity }: IWriteProps) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const router = useRouter();
 
   const emptyQuillDefault = "<p><br></p>";
   const isAllowedToPost = !!title && !!content && content !== emptyQuillDefault;
+
+  useEffect(() => {
+    if (entity) {
+      setTitle(entity.title);
+      setContent(entity.content);
+    }
+  }, [entity]);
 
   async function handleCreatePost(
     event: FormEvent<HTMLFormElement>,
@@ -26,9 +37,17 @@ const Write = () => {
     event.preventDefault();
 
     try {
-      const response = await api.post("post", { title, content });
+      let response;
 
-      if (response.data.id) {
+      if (!entity) {
+        response = await api.post("post", { title, content });
+      }
+
+      if (entity) {
+        response = await api.post("patch", { title, content });
+      }
+
+      if (response?.data.id) {
         router.push(`post/${response.data.id}`);
       }
     } catch (error) {

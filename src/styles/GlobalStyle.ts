@@ -32,10 +32,11 @@ button {
   height: 2.5rem;
   transition: all 200ms ease-in-out;
   width: 100%;
+  opacity: 0.9;
 
   :hover {
     cursor: pointer;
-    scale: 1.01;
+    opacity: 1;
   }
 }
 

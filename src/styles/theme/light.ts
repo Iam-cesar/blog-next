@@ -13,6 +13,7 @@ export const light = {
     modalBackgroundColor: colorPalete.white[100],
     borderColor: colorPalete.black[100],
     disabled: colorPalete.black[300],
+    delete: "#7B191F",
   },
   effects: {
     boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",

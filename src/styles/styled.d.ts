@@ -14,6 +14,7 @@ declare module "styled-components" {
       modalBackgroundColor: string;
       borderColor: string;
       disabled: string;
+      delete: string;
     };
 
     effects: {
