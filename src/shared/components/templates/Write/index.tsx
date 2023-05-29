@@ -48,7 +48,7 @@ const Write = ({ entity }: IWriteProps) => {
       }
 
       if (response?.data.id) {
-        router.push(`post/${response.data.id}`);
+        router.push(`/post/${response.data.id}`);
       }
     } catch (error) {
       console.log("🚀 ~ file: index.tsx:26 ~ Write ~ error", error);
