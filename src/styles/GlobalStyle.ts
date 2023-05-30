@@ -26,7 +26,7 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
-  p{
+  p, span{
     margin: 0;
     line-height: 150%;
   }
