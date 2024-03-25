@@ -1,0 +1,17 @@
+.themeButton {
+  padding: var(--mantine-spacing-xs);
+
+  display: flex;
+  align-items: center;
+
+  transition: all 0.2s ease;
+
+  border-radius: var(--mantine-radius-sm);
+
+  @mixin hover {
+    background-color: light-dark(
+      var(--mantine-color-gray-0),
+      var(--mantine-color-dark-6)
+    );
+  }
+}

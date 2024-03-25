@@ -1,0 +1,13 @@
+.displayFlex {
+  display: flex;
+  gap: 0.5rem;
+
+  width: 100%;
+}
+
+.linkDefault {
+  text-decoration: none;
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+
+  width: inherit;
+}
